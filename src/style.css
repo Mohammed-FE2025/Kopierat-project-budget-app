@@ -94,3 +94,54 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+#main {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+#incomeSection {
+  width: 50%;
+  display: inline-block;
+}
+#incomeSection input {
+  width: 70%;
+  padding: 0.5rem;
+  font-size: 1em;
+}
+#incomeSection button {
+  padding: 0.5rem 1rem;
+  font-size: 1em; 
+margin-top: 0.5rem;
+}
+#expenseSection {
+  width: 50%;
+  display: inline-block;
+  margin-top: 1rem;
+}
+#expenseSection input {
+  width: 70%;
+  padding: 0.5rem;
+  font-size: 1em;
+}
+#expenseSection button {
+  padding: 0.5rem 1rem;
+  font-size: 1em; 
+margin-top: 0.5rem;
+}
+
+.amount {
+  display: inline-grid;
+  margin-top: 1rem;
+  font-size: 1.2em;
+} 
+
+.incomeExpenseSection {
+  display: flex;
+
+} 
+.incomeExpenseSection > div {
+  flex: 1;
+  padding: 0 1rem;
+  text-align: center;
+} 
