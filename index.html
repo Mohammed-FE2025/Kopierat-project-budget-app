@@ -10,49 +10,87 @@
     <section id="main">
       <h1>Budget App</h1>
       <h2>Your Balance</h2>
-      <h3 id="balanceDisplay">$0</h3>
+      <h3
+        id="balanceDisplay"
+        style="
+          font-weight: bold;
+          color: #fffcfc;
+          font-size: large;
+          background-color: #ff0000 transparent;
+          padding: 10px;
+          border-radius: 5px;
+          border-color: rgb(231, 231, 231);
+          border: solid 1px;
+        "
+      >
+        $0
+      </h3>
       <section class="incomeExpenseSection">
-        <div id="incomeSection">
-          <input
-            type="text"
-            id="incomeInput"
-            placeholder="Enter income amount"
-          />
-          <button type="button" id="setIncomeBtn">Set Income</button>
+        <div id="incomeSection" class="incomesection">
           <h2 id="incomeDisplay">Income: $0</h2>
         </div>
-        <div id="expenseSection">
-          <input
-            type="text"
-            id="expenseInput"
-            placeholder="Enter expense amount"
-          />
-          <button type="button" id="addExpenseBtn">Add Expense</button>
-
+        <div id="expenseSection" class="expensessection">
           <h2 id="expenseDisplay">Expenses: $0</h2>
         </div>
       </section>
       <h3>Add Transaction</h3>
       <form>
         <input
+          style="
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: #fffafa;
+            color: #000000;
+            font-size: 1rem;
+            font-weight: bold;
+          "
           type="text"
           id="transactionDescreption"
           placeholder="transaction description"
         />
         <br />
-        <br />
         <label class="amount" for="amount">
-          Amount: (negative = expense, positive = income)
+          <strong>Amount:</strong> negative = expense / positive = income
+
           <input
             type="text"
             id="transactionAmount"
             placeholder="Enter Amount"
+            style="
+              width: 100%;
+              padding: 0.5rem;
+              margin-bottom: 1rem;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              background: #fffafa;
+              color: #000000;
+              font-size: 1rem;
+              font-weight: bold;
+              margin-top: 10px;
+            "
           />
         </label>
 
         <br />
         <br />
-        <button type="submit" id="addTransactionBtn">Add Transaction</button>
+        <button
+          type="submit"
+          id="addTransactionBtn"
+          style="
+            width: 100%;
+            padding: 0.5rem;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+          "
+        >
+          Add Transaction
+        </button>
       </form>
       <!--transaction history-->
       <h2>Transaction History</h2>

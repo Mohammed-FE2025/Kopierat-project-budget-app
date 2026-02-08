@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #ce1111;
+  background-color: rgba(206, 17, 17, 0.15);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -137,11 +137,31 @@ margin-top: 0.5rem;
 } 
 
 .incomeExpenseSection {
-  display: flex;
+display: block ruby;
 
 } 
-.incomeExpenseSection > div {
-  flex: 1;
-  padding: 0 1rem;
-  text-align: center;
-} 
+
+
+.incomeExpenseSection h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.incomeExpenseSection button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Income card */
+.incomesection {
+  background-color: #f5f7ff;
+  color: #2e7d32;
+}
+
+/* Expenses card */
+.expensessection {
+  background-color: #fdecec;
+  color: #c62828;
+}
