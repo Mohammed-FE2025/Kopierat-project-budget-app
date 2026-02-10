@@ -93,8 +93,27 @@
         </button>
       </form>
       <!--transaction history-->
-      <h2>Transaction History</h2>
-      <ul id="transactionHistory"></ul>
+      <section>
+        <h2>Transaction History</h2>
+
+        <table
+          id="transactionTable"
+          style="width: 100%; border-collapse: collapse"
+        >
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="transactionHistory">
+            <!-- JS/TypeScript will insert rows here -->
+          </tbody>
+        </table>
+      </section>
     </section>
     <script type="module" src="/src/main.ts"></script>
   </body>
