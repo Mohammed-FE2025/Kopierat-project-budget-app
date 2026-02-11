@@ -42,17 +42,34 @@ function addTransaction() {
 
 function updateTransactionHistory() {
   transactionHistory.innerHTML = "";
-  transactions.forEach((transaction) => {
-    const li = document.createElement("tr");
+
+  transactions.forEach((transaction, index) => {
+    const row = document.createElement("tr");
+
     const descriptionCell = document.createElement("td");
-    const amountCell = document.createElement("td");
     descriptionCell.textContent = transaction.description;
+
+    const amountCell = document.createElement("td");
     amountCell.textContent = `$${transaction.amount}`;
-    li.appendChild(descriptionCell);
-    li.appendChild(amountCell);
-    transactionHistory.appendChild(li);
+
+    const actionCell = document.createElement("td");
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+
+    deleteButton.addEventListener("click", () => {
+      deleteTransaction(index);
+    });
+
+    actionCell.appendChild(deleteButton);
+
+    row.appendChild(descriptionCell);
+    row.appendChild(amountCell);
+    row.appendChild(actionCell);
+
+    transactionHistory.appendChild(row);
   });
 }
+
 
 function updateBalance() {
   const totalIncome = transactions.reduce((sum, transaction) => sum + (transaction.amount > 0 ? transaction.amount : 0), 0);
@@ -62,4 +79,10 @@ function updateBalance() {
   expenseDisplay.textContent = `Expense: ${totalExpense}`;
   
   balanceDisplay.textContent = `Balance: ${totalIncome - totalExpense}`;
+}
+
+function deleteTransaction(index: number) {
+  transactions.splice(index, 1);
+  updateTransactionHistory();
+  updateBalance();
 }

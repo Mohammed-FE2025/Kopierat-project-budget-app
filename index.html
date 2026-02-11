@@ -5,6 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>fed25d-js-inl-2-budget-app-mohammed-fe2025</title>
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
     <section id="main">
@@ -35,22 +36,24 @@
       </section>
       <h3>Add Transaction</h3>
       <form>
-        <input
-          style="
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background: #fffafa;
-            color: #000000;
-            font-size: 1rem;
-            font-weight: bold;
-          "
-          type="text"
-          id="transactionDescreption"
-          placeholder="transaction description"
-        />
+        <label for="description">
+          <input
+            style="
+              width: 100%;
+              padding: 0.5rem;
+              margin-bottom: 1rem;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              background: #fffafa;
+              color: #000000;
+              font-size: 1rem;
+              font-weight: bold;
+            "
+            type="text"
+            id="transactionDescreption"
+            placeholder="transaction description"
+          />
+        </label>
         <br />
         <label class="amount" for="amount">
           <strong>Amount:</strong> negative = expense / positive = income
@@ -98,12 +101,13 @@
 
         <table
           id="transactionTable"
-          style="width: 100%; border-collapse: collapse"
+          style="width: 100%; border: #fffafa solid 1px"
         >
           <thead>
             <tr>
               <th>Description</th>
               <th>Amount</th>
+              <th>Action</th>
             </tr>
           </thead>
 
