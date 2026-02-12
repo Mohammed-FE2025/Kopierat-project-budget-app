@@ -1,6 +1,9 @@
-// @ts-nocheck
 import './style.css'
-const form = document.querySelector("form");
+type Transaction = {
+description: string;
+amount: number;
+}
+const form = document.querySelector("form") as HTMLElement;
 
 const descriptionInput = document.getElementById(
   "transactionDescreption"
@@ -10,15 +13,15 @@ const amountInput = document.getElementById(
   "transactionAmount"
 ) as HTMLInputElement;
 
-const balanceDisplay = document.getElementById("balanceDisplay")!;
+const balanceDisplay = document.getElementById("balanceDisplay") as HTMLElement;
 
 
-const transactionHistory = document.getElementById("transactionHistory")!;
-const transactions = JSON.parse(
+const transactionHistory = document.getElementById("transactionHistory") as HTMLElement;
+const transactions: Transaction[] = JSON.parse(
   localStorage.getItem("transactions") || "[]"
 );
 
-form?.addEventListener("submit", function(event) {
+form.addEventListener("submit", function(event) {
   event.preventDefault();
   addTransaction();
 });
