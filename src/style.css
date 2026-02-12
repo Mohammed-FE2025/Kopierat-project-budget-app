@@ -35,34 +35,7 @@ h1 {
   padding: 2rem;
   text-align: center;
 }
-#incomeSection {
-  width: 50%;
-  margin-top: 1rem;
-}
-#incomeSection input {
-  width: 70%;
-  padding: 0.5rem;
-  font-size: 1em;
-}
-#incomeSection button {
-  padding: 0.5rem 1rem;
-  font-size: 1em; 
-margin-top: 0.5rem;
-}
-#expenseSection {
-  width: 50%;
-  margin-top: 1rem;
-}
-#expenseSection input {
-  width: 70%;
-  padding: 0.5rem;
-  font-size: 1em;
-}
-#expenseSection button {
-  padding: 0.5rem 1rem;
-  font-size: 1em; 
-margin-top: 0.5rem;
-}
+
 
 .amount {
   display: inline-grid;
@@ -70,23 +43,19 @@ margin-top: 0.5rem;
   font-size: 1.2em;
 } 
 
-.incomeExpenseSection {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-}
- 
 
-
-.incomeExpenseSection h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
+@media (max-width: 768px) {
+  #main {
+    display: grid;
+  
+    grid-auto-columns: min-content;
+  }
+  h1 {
+    font-size: 4.25em;
+  }
+  h2 {
+    font-size: 2.25em;
+  }
 }
 
-.incomeExpenseSection button {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin: 0;
-}
 
