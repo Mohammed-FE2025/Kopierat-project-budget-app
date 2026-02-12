@@ -11,8 +11,7 @@ const amountInput = document.getElementById(
 ) as HTMLInputElement;
 
 const balanceDisplay = document.getElementById("balanceDisplay")!;
-const incomeDisplay = document.getElementById("incomeDisplay")!;
-const expenseDisplay = document.getElementById("expenseDisplay")!;
+
 
 const transactionHistory = document.getElementById("transactionHistory")!;
 const transactions = [];
@@ -72,14 +71,30 @@ function updateTransactionHistory() {
 
 
 function updateBalance() {
-  const totalIncome = transactions.reduce((sum, transaction) => sum + (transaction.amount > 0 ? transaction.amount : 0), 0);
-  const totalExpense = transactions.reduce((sum, transaction) => sum + (transaction.amount < 0 ? Math.abs(transaction.amount) : 0), 0);
-  
-  incomeDisplay.textContent = `Income: ${totalIncome}`;
-  expenseDisplay.textContent = `Expense: ${totalExpense}`;
-  
-  balanceDisplay.textContent = `Balance: ${totalIncome - totalExpense}`;
+  const totalIncome = transactions
+    .filter(t => t.amount > 0)
+    .reduce((sum, t) => sum + t.amount, 0);
+
+  const totalExpense = transactions
+    .filter(t => t.amount < 0)
+    .reduce((sum, t) => sum + Math.abs(t.amount), 0);
+
+  const balance = totalIncome - totalExpense;
+
+
+  balanceDisplay.textContent = `$${balance}`;
+
+  console.log("Balance:", balance);
+
+  if (balance > 0) {
+    balanceDisplay.style.backgroundColor = "green";
+  } else if (balance < 0) {
+    balanceDisplay.style.backgroundColor = "red";
+  } else {
+    balanceDisplay.style.backgroundColor = "gray";
+  }
 }
+
 
 function deleteTransaction(index: number) {
   transactions.splice(index, 1);

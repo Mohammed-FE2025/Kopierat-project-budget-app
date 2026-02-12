@@ -90,14 +90,3 @@ margin-top: 0.5rem;
   margin: 0;
 }
 
-/* Income card */
-.incomesection {
-  background-color: #f5f7ff;
-  color: #2e7d32;
-}
-
-/* Expenses card */
-.expensessection {
-  background-color: #fdecec;
-  color: #c62828;
-}
