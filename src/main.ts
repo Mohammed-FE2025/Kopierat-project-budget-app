@@ -14,7 +14,10 @@ const balanceDisplay = document.getElementById("balanceDisplay")!;
 
 
 const transactionHistory = document.getElementById("transactionHistory")!;
-const transactions = [];
+const transactions = JSON.parse(
+  localStorage.getItem("transactions") || "[]"
+);
+
 form?.addEventListener("submit", function(event) {
   event.preventDefault();
   addTransaction();
@@ -35,6 +38,7 @@ function addTransaction() {
   };
 
   transactions.push(transaction);
+  saveToLocalStorage();
   updateTransactionHistory();
   updateBalance();
 }
@@ -98,6 +102,14 @@ function updateBalance() {
 
 function deleteTransaction(index: number) {
   transactions.splice(index, 1);
+  saveToLocalStorage(); 
   updateTransactionHistory();
   updateBalance();
 }
+
+function saveToLocalStorage() {
+  localStorage.setItem("transactions", JSON.stringify(transactions));
+}
+
+updateTransactionHistory();
+updateBalance();
