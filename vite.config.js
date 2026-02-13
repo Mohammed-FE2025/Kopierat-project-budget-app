@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/Kopierat-project-budget-app/",
+  base: "/fed25d-js-inl-2-budget-app-mohammed-fe2025/",
 });
+
