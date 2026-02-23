@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget App</title>
+  </head>
+  <link rel="stylesheet" href="src/style.css" />
+  <body>
+    <section id="main">
+      <h1>Budget App</h1>
+      <h2>Your Balance</h2>
+      <h3
+        id="balanceDisplay"
+        style="
+          font-weight: bold;
+          font-size: large;
+          padding: 10px;
+          border-radius: 5px;
+          border-color: rgb(231, 231, 231);
+          border: solid 1px;
+        "
+      >
+        $0
+      </h3>
+
+      <h3 style="margin-top: 20px">Add Transaction</h3>
+      <form>
+        <label for="description">
+          <input
+            style="
+              width: 100%;
+              padding: 0.5rem;
+              margin-bottom: 1rem;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              background: #fffafa;
+              color: #000000;
+              font-size: 1rem;
+              font-weight: bold;
+            "
+            type="text"
+            id="transactionDescreption"
+            placeholder="transaction description"
+          />
+        </label>
+        <br />
+        <label class="amount" for="amount">
+          <strong>Amount:</strong> negative = expense / positive = income
+
+          <input
+            type="text"
+            id="transactionAmount"
+            placeholder="Enter Amount"
+            style="
+              width: 100%;
+              padding: 0.5rem;
+              margin-bottom: 1rem;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              background: #fffafa;
+              color: #000000;
+              font-size: 1rem;
+              font-weight: bold;
+              margin-top: 10px;
+            "
+          />
+        </label>
+
+        <br />
+        <br />
+        <button
+          type="submit"
+          id="addTransactionBtn"
+          style="
+            width: 100%;
+            padding: 0.5rem;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+          "
+        >
+          Add Transaction
+        </button>
+      </form>
+      <!--transaction history-->
+      <section>
+        <h2>Transaction History</h2>
+
+        <table
+          id="transactionTable"
+          style="width: 100%; border: #fffafa solid 1px"
+        >
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="transactionHistory"></tbody>
+        </table>
+      </section>
+    </section>
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
